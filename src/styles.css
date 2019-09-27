@@ -4,9 +4,10 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 body {
-  background: #FDD761;
+  background: rgb(97, 222, 253);
   font-family: 'Lucida Sans Unicode', 'Arial', serif;
   color: white;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 h1, h3, h4, header .btn {
@@ -35,6 +36,7 @@ h3:after {
   width: 10%;
   padding-top: 5px;
   border-bottom: 3px solid whitesmoke;
+  box-shadow: 1px 2px rgb(0, 0, 0);
 }
 
 h1 + h4 {
@@ -46,9 +48,9 @@ a {
   outline: none;
   display: inline-block;
   text-decoration: none;
-  background: #fcca2f;
+  background: #27abcc;
   font-size: 14px;
-  color: steelblue;
+  color: rgb(13, 75, 126);
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
   -webkit-transition: all ease .3s;
           transition: all ease .3s;
@@ -77,10 +79,18 @@ header .btn {
 
 header a:hover, .about a:hover {
   background: #fcc316;
+  color: rgb(0, 0, 0);
 }
 
-header .btn, .services {
+header .btn {
   margin-top: 100px;
+}
+
+header .services {
+  margin-top: 100px;
+  padding: 15px 20px 20px 20px;
+  background: rgba(56, 56, 56, 0.507);
+  border-radius: 5px;
 }
 
 header {
@@ -92,7 +102,7 @@ header {
 }
 
 header {
-  background: url("https://unsplash.it/1080/720/?image=377") no-repeat fixed center / cover;
+  background: url("assets/NYC_Background.jpg") no-repeat fixed center / cover;
   text-align: center;
 }
 
@@ -148,7 +158,7 @@ nav li:nth-child(2n+1) a:after {
 
 .services span {
   font-size: 5.5em;
-  color: #f4ba04;
+  color: #04e4f4;
 }
 
 .services a:hover span {
@@ -292,12 +302,12 @@ nav li:nth-child(2n+1) a:after {
   }
 
   a {
-    box-shadow: 0 8px #f4ba04;
+    box-shadow: 0 8px #00eeff;
   }
 
   nav a {
     padding: 7px;
-    border-right: 1px solid #fabd03;
+    border-right: 1px solid #00eeff;
     width: 80px;
   }
 
@@ -310,11 +320,11 @@ nav li:nth-child(2n+1) a:after {
   }
 
   header a:hover, .about a:hover {
-    box-shadow: 0 8px #f4ba04;
+    box-shadow: 0 8px #b48b11;
   }
 
   header a:active, .about a:active {
-    box-shadow: 0 4px #f4ba04;
+    box-shadow: 0 4px #b48b11;
     -webkit-transform: translateY(4px);
         -ms-transform: translateY(4px);
             transform: translateY(4px);
