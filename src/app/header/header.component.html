@@ -1,17 +1,14 @@
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns">
-                <nav>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Hobbies</a></li> <!--Talk about Health (resistance training, yoga, boxing), music (instruments, Spotify playlists, production), -->
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <nav>
+                <ul>
+                    <li><a [routerLink]="['/']">About</a></li>
+                    <li><a [routerLink]="['/career']">Career</a></li>
+                    <li><a [routerLink]="['/hobbies']">Hobbies</a></li> <!--Talk about Health (resistance training, yoga, boxing), music (instruments, Spotify playlists, production), -->
+                    <li><a [routerLink]="['/contact']">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <app-about></app-about>
     </div>
-</header>
+</div>
