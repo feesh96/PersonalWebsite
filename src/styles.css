@@ -4,7 +4,8 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 body {
-  background: rgb(97, 222, 253);
+  background: url("assets/NYC_Background.jpg") no-repeat fixed center / cover;
+  text-align: center;
   font-family: 'Lucida Sans Unicode', 'Arial', serif;
   color: white;
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -102,11 +103,6 @@ header {
   padding: 150px 0;
 }
 
-header {
-  background: url("assets/NYC_Background.jpg") no-repeat fixed center / cover;
-  text-align: center;
-}
-
 nav ul, .contact ul {
   list-style: none;
   font-size: 0;
@@ -128,18 +124,6 @@ nav a {
   padding: 7px 0;
   line-height: 30px;
   box-shadow: 1px 2px 5px rgb(0, 0, 0);
-}
-
-nav li:nth-child(2n+1) a:after {
-  position: absolute;
-  content: '';
-  top: 19.5px;
-  right: -2.5px;
-  z-index: 10;
-  border-radius: 100%;
-  background: steelblue;
-  width: 5px;
-  height: 5px;
 }
 
 
