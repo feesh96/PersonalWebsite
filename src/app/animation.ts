@@ -10,7 +10,7 @@ import {
 
 export const slideInAnimation =
   trigger('routeAnimations', [  //pull left
-    transition('HomePage => *, * => ContactPage, CareerPage => HobbiesPage', [
+    transition('HomePage => CareerPage, HomePage => HobbiesPage, HomePage => ContactPage, CareerPage => HobbiesPage, CareerPage => ContactPage, HobbiesPage => ContactPage', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -34,9 +34,8 @@ export const slideInAnimation =
           animate('400ms ease-out', style({ left: '0%'}))
         ])
       ]),
-      query(':enter', animateChild()),
     ]),
-    transition('ContactPage => *, * => HomePage, HobbiesPage => CareerPage', [    //pull right
+    transition('ContactPage => HobbiesPage, ContactPage => CareerPage, ContactPage => HomePage, HobbiesPage => CareerPage, HobbiesPage => HomePage, CareerPage => HomePage', [    //pull right
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -60,6 +59,5 @@ export const slideInAnimation =
           animate('400ms ease-out', style({ left: '0%'}))
         ])
       ]),
-      query(':enter', animateChild()),
     ]),
   ]);

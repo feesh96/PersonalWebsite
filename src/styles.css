@@ -4,7 +4,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 body {
-  background: url("assets/NYC_Background.jpg") no-repeat fixed center / cover;
+  background: url("assets/NYC_Background_3.jpg") no-repeat fixed center / cover;
   text-align: center;
   font-family: 'Lucida Sans Unicode', 'Arial', serif;
   color: white;
@@ -177,8 +177,9 @@ nav a {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .about {
-  background: url("https://unsplash.it/1080/720/?image=349") no-repeat fixed center / cover;
+  /* background: url("https://unsplash.it/1080/720/?image=349") no-repeat fixed center / cover; */
   color: black;
+  text-shadow: none;
 }
 
 .about .one-third, 
@@ -191,6 +192,8 @@ nav a {
 
 .about .one-third {
   margin-top: 20px;
+  text-align: left;
+  font-size: 89%;
 }
 
 .about a {
