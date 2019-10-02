@@ -96,11 +96,11 @@ header .services {
 }
 
 header {
-  padding: 80px 0 150px;
+  padding: 80px 0 150px 0;
 }
 
-.about, .contact {
-  padding: 150px 0;
+.about, .contact, .hobbies {
+  padding: 30px 0;
 }
 
 nav ul, .contact ul {
@@ -178,16 +178,17 @@ nav a {
 
 .about {
   /* background: url("https://unsplash.it/1080/720/?image=349") no-repeat fixed center / cover; */
-  color: black;
-  text-shadow: none;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 .about .one-third, 
 .about .two-thirds {
   background: white;
-  background: rgba(255,255,255,.3);
+  background: rgba(56, 56, 56, 0.507);
   padding: 10px;
   border-radius: 5px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 .about .one-third {
@@ -224,6 +225,61 @@ nav a {
 } 
 
 .about .two-thirds p:last-child {
+  margin-bottom: 0;
+}
+
+/* HOBBIES STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.hobbies {
+  /* background: url("https://unsplash.it/1080/720/?image=349") no-repeat fixed center / cover; */
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.hobbies .one-third, 
+.hobbies .two-thirds {
+  background: white;
+  background: rgba(56, 56, 56, 0.507);
+  padding: 10px;
+  border-radius: 5px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.hobbies .one-third {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 89%;
+}
+
+.hobbies a {
+  margin-top: 10px;
+}
+
+.hobbies ul {
+  margin-bottom:18px;
+}
+
+.hobbies h3:after, .contact h3:after {
+  border-color: black;
+}
+
+.hobbies .center {
+  text-align: center;
+}
+
+.hobbies .bottom {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.hobbies .one-third a {
+  margin: 10px auto;
+  width: 50%;
+  display: block;
+} 
+
+.hobbies .two-thirds p:last-child {
   margin-bottom: 0;
 }
 
