@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +20,7 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    SlideshowModule,
     RouterModule.forRoot([  //Put all the component routing within the home page here
       { path: '', component: AboutComponent, data: {animation: 'HomePage'} },
       { path: 'career', component: CareerComponent, data: {animation: 'CareerPage'}},
@@ -38,10 +40,3 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
   providers: []
 })
 export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

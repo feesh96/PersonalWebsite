@@ -1,10 +1,53 @@
 /* You can add global styles to this file, and also import other style files */    
 
+/* Parallax styles */
+
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+
+.parallax__layer--back {
+  transform: translateZ(-1px);
+}
+
+.forefront-element {
+  -webkit-transform: translateZ(999px) scale(.7);
+  transform: translateZ(999px) scale(.7);
+  z-index: 1;
+}
+
+.base-element {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+}
+
+.background-element {
+  -webkit-transform: translateZ(-999px) scale(2);
+  transform: translateZ(-999px) scale(2);
+  z-index: 3;
+}
+
 /* GENERAL STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 body {
-  background: url("assets/NYC_Background_3.jpg") no-repeat fixed center / cover;
+  background: #04e4f4 url("assets/NYC_Background_3.jpg") no-repeat fixed left top / cover;
   text-align: center;
   font-family: 'Lucida Sans Unicode', 'Arial', serif;
   color: white;
