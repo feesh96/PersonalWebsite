@@ -8,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hobbies.component.css']
 })
 export class HobbiesComponent implements OnInit {
-  imageUrlArray: string[] = [
-    '../../assets/Guitar.jpeg',
-    '../../assets/Yoga_Class.jpg'
+  fitnessImages: string[] = [
+    '../../assets/Yoga_Class.jpg',
+    '../../assets/Resistance.jpg',
+    '../../assets/Boxing.jpg'
   ];
+  musicImages: string[] = [
+    '../../assets/Guitar.jpeg',
+    '../../assets/Ukulele.jpg',
+    '../../assets/Keyboard.jpg'
+  ];
+
   constructor() { }
 
   ngOnInit() {
