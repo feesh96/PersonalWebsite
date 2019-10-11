@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { CareerComponent } from './career/career.component';
 import { ContactComponent } from './contact/contact.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
+import { CustomSliderComponent } from './custom-slider/custom-slider.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
     AboutComponent,
     CareerComponent,
     HobbiesComponent,
-    ContactComponent
+    ContactComponent,
+    CustomSliderComponent
   ],
   bootstrap: [AppComponent],
   providers: []
