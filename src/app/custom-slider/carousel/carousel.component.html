@@ -1,0 +1,16 @@
+<div class="container">
+    <section class="carousel-wrapper" [ngStyle]="carouselWrapperStyle">
+        <ul class="carousel-inner" #carousel>
+            <li *ngFor="let item of items;" class="carousel-item" style="list-style-type:none">
+                <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+            </li>
+        </ul>
+    </section>
+    
+    <div>
+        <button (click)="next()" class="shift" style="right:0%;"><i class="fa fa-angle-right"></i></button>
+    </div>
+    <div>
+        <button (click)="prev()" class="shift" style="left:0%;"><i class="fa fa-angle-left"></i></button>
+    </div>
+</div>

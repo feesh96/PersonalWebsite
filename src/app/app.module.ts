@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {SlideshowModule} from 'ng-simple-slideshow';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,7 +11,9 @@ import { AboutComponent } from './about/about.component';
 import { CareerComponent } from './career/career.component';
 import { ContactComponent } from './contact/contact.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
-import { CustomSliderComponent } from './custom-slider/custom-slider.component';
+import { CustomSliderComponent } from './custom-slider/custom-slider.component'
+import { CarouselComponent, CarouselItemElement } from './custom-slider/carousel/carousel.component';
+import { CarouselItemDirective } from './custom-slider/carousel/carousel-item.directive';
 
 
 @NgModule({
@@ -21,7 +22,6 @@ import { CustomSliderComponent } from './custom-slider/custom-slider.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    SlideshowModule,
     RouterModule.forRoot([  //Put all the component routing within the home page here
       { path: '', component: AboutComponent, data: {animation: 'HomePage'} },
       { path: 'career', component: CareerComponent, data: {animation: 'CareerPage'}},
@@ -36,9 +36,19 @@ import { CustomSliderComponent } from './custom-slider/custom-slider.component';
     CareerComponent,
     HobbiesComponent,
     ContactComponent,
+    CarouselComponent, 
+    CarouselItemDirective, 
+    CarouselItemElement,
     CustomSliderComponent
   ],
   bootstrap: [AppComponent],
   providers: []
 })
 export class AppModule { }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

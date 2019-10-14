@@ -1,25 +1,12 @@
-<div class="container">
-    <div class="img-container"  *ngFor="let i of healthSliderArray; let select = index;"
-            [ngClass]="{'selected': select == selectedIndex}">
-        <img src="{{i.img}}" alt="{{i.alt}}" >
-    </div>
-       
-    <!--</div>-->
-    <div [ngStyle]="{'transform': 'translateX('+ transform + '%' +')', 'transition': '.8s'}">
-        <div class="text-container">
-            <div class="page-text" *ngFor="let i of healthSliderArray;let select = index;" [ngClass]="{'selected': select == selectedIndex}">
-                <h3>{{i.text}}</h3>
-            </div>
-        </div>
-    </div>
-       
-</div>
-       
-<div class="slider">
-    <div class="slide-button-parent-container"  *ngFor="let i of healthSliderArray; let x =index" (click)="selected(x)" >
-            <div class="select-box">
-                <div   class="slide-button" [ngClass]="{'slide-button-select': x == selectedIndex}" >
+ <carousel>
+    <ng-container *ngFor="let item of healthSliderArray;">
+        <ng-container *carouselItem>    <!--ng-container helps this stuff get rendered properly-->
+            <div class="container">
+                <img src={{item.img}}>
+                <div class="item">
+                    {{item.text}}
                 </div>
             </div>
-    </div>
-</div>
+        </ng-container>
+    </ng-container>
+</carousel>
