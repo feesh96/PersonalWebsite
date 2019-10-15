@@ -9,4 +9,15 @@
     position: relative;
     text-align: center;
     color: white;
+    margin: 0;
+    height: 350px;  /* must match the carousel container height */
+    width: 100%;
+    overflow: hidden;
   }
+
+.image {
+  object-fit: fill;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

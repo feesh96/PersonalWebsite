@@ -1,8 +1,9 @@
+<div style="height: 20%;"> <!-- height of slider -->
  <carousel>
     <ng-container *ngFor="let item of healthSliderArray;">
         <ng-container *carouselItem>    <!--ng-container helps this stuff get rendered properly-->
             <div class="container">
-                <img src={{item.img}}>
+                <img src={{item.img}} class="image">
                 <div class="item">
                     {{item.text}}
                 </div>
@@ -10,3 +11,4 @@
         </ng-container>
     </ng-container>
 </carousel>
+</div>
