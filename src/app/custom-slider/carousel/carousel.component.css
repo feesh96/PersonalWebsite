@@ -13,15 +13,19 @@
 }
 
 .shift {
+  display: block;
   position: absolute;
-  top: 50%;
+  top: 0%;
+  height:100%;
   padding: none;
   border: none;
-  background: white;
+  opacity: 0.6;
+  background: black;
+  background: linear-gradient(to right,rgba(0, 0, 0, 0.637), rgba(240, 240, 240, 0));
 }
 
 .shift:hover {
-  background: #fcc316;
+  opacity: 1;
 }
 
 /* Width and height of slider */
@@ -29,6 +33,7 @@
   position: relative;
   text-align: center;
   color: white;
+  opacity: 2;
   width: 100%;
   height: 350px; /* must match custom-slider height */
 }

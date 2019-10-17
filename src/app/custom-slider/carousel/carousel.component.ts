@@ -26,7 +26,6 @@ export class CarouselComponent implements AfterViewInit {
   carouselWrapperStyle = {}
 
   next() {
-    if( this.currentSlide + 1 === this.items.length ) return;
     this.currentSlide = (this.currentSlide + 1) % this.items.length;
     const offset = this.currentSlide * this.itemWidth;
     const myAnimation : AnimationFactory = this.buildAnimation(offset);
@@ -41,8 +40,6 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   prev() {
-    if( this.currentSlide === 0 ) return;
-
     this.currentSlide = ((this.currentSlide - 1) + this.items.length) % this.items.length;
     const offset = this.currentSlide * this.itemWidth;
 
