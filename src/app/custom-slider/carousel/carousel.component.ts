@@ -26,6 +26,8 @@ export class CarouselComponent implements AfterViewInit {
   carouselWrapperStyle = {}
 
   next() {
+    this.ngAfterViewInit()
+
     this.currentSlide = (this.currentSlide + 1) % this.items.length;
     const offset = this.currentSlide * this.itemWidth;
     const myAnimation : AnimationFactory = this.buildAnimation(offset);
@@ -34,12 +36,18 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   private buildAnimation( offset ) {
+    console.log("offset: " + offset)
+    console.log("slide: " + this.currentSlide)
+    console.log("width: " + this.itemWidth)
+
     return this.builder.build([
       animate(this.timing, style({ transform: `translateX(-${offset}px)` }))
     ]);
   }
 
   prev() {
+    this.ngAfterViewInit()
+
     this.currentSlide = ((this.currentSlide - 1) + this.items.length) % this.items.length;
     const offset = this.currentSlide * this.itemWidth;
 
@@ -52,12 +60,12 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // For some reason only here I need to add setTimeout, in my local env it's working without this.
-    setTimeout(() => {
-      this.itemWidth = this.itemsElements.first.nativeElement.getBoundingClientRect().width;
-      this.carouselWrapperStyle = {
-        width: `${this.itemWidth}px`
-      }
-    });
+    this.itemWidth = this.itemsElements.first.nativeElement.getBoundingClientRect().width;
+    console.log("itemElements: " + this.itemsElements.first.nativeElement.getBoundingClientRect().x)
+    console.log("REALWIDTH: " + this.itemWidth)
+
+    this.carouselWrapperStyle = {
+      width: `${this.itemWidth}px`
+    }
   }
 }

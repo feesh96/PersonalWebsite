@@ -1,15 +1,16 @@
 .item {
-    padding: 0, 0, 18px, 5px;
+    position:absolute;
+    display: inline-block;
+    width: 80vw;
     bottom: 18px;
-    left: 16px;
+    left: 0px;
     text-align: center;
-    position: absolute;
     border-radius: 10px;
     text-shadow: .05em .05em .15em rgb(0, 0, 0), -.05em -.05em .15em rgb(0, 0, 0);
   }
   .container {
     position: relative;
-    text-align: center;
+    text-align: left;
     color: white;
     margin: 0;
     height: 350px;  /* must match the carousel container height */
@@ -28,5 +29,6 @@
 
 .parent {
   position: absolute;
+  width: 100%;
 }
 
