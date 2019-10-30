@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxAudioPlayerModule } from 'ngx-audio-player';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,6 +15,8 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
 import { CustomSliderComponent } from './custom-slider/custom-slider.component'
 import { CarouselComponent, CarouselItemElement } from './custom-slider/carousel/carousel.component';
 import { CarouselItemDirective } from './custom-slider/carousel/carousel-item.directive';
+import { ProductionComponent } from './production/production.component';
+import { AreasOfExpertiseComponent } from './areas-of-expertise/areas-of-expertise.component';
 
 
 @NgModule({
@@ -22,11 +25,13 @@ import { CarouselItemDirective } from './custom-slider/carousel/carousel-item.di
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    NgxAudioPlayerModule,
     RouterModule.forRoot([  //Put all the component routing within the home page here
       { path: '', component: AboutComponent, data: {animation: 'HomePage'} },
       { path: 'career', component: CareerComponent, data: {animation: 'CareerPage'}},
       { path: 'hobbies', component: HobbiesComponent, data: {animation: 'HobbiesPage'}},
       { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
+      { path: 'production', component: ProductionComponent, data: {animation: 'ProductionPage'}},
     ])
   ],
   declarations: [
@@ -39,7 +44,9 @@ import { CarouselItemDirective } from './custom-slider/carousel/carousel-item.di
     CarouselComponent, 
     CarouselItemDirective, 
     CarouselItemElement,
-    CustomSliderComponent
+    CustomSliderComponent,
+    ProductionComponent,
+    AreasOfExpertiseComponent
   ],
   bootstrap: [AppComponent],
   providers: []
