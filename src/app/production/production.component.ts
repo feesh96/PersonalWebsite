@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Track } from 'ngx-audio-player';   
+
+import { ConstantsService } from '../common/services/constants.service';
+
 
 
 @Component({
@@ -8,11 +11,15 @@ import { Track } from 'ngx-audio-player';
   styleUrls: ['./production.component.css']
 })
 
+
 export class ProductionComponent implements OnInit {
+
+  @Input() showMusic: string;
+  state: Number;
 
   msaapDisplayTitle = true;
   msaapDisplayPlayList = true;
-  msaapPageSizeOptions = [2,4,6];
+  msaapPageSizeOptions = [4];
   msaapDisplayVolumeControls = true;
 
   // Material Style Advance Audio Player Playlist
@@ -41,11 +48,15 @@ export class ProductionComponent implements OnInit {
     title: 'The Good Life',
     link: '../assets/Beats/The Good Life.mp3'
   }
-];
+  ];
 
-  constructor() { }
+  constructor(private stateService: ConstantsService) {  }
 
   ngOnInit() {
+    this.stateService.currentState.subscribe(state => this.state = state)
   }
 
+  hideMusic() {
+    this.stateService.toggleMusic(0)
+  }
 }

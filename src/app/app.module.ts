@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
+import { ConstantsService } from './common/services/constants.service';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -49,7 +51,7 @@ import { AreasOfExpertiseComponent } from './areas-of-expertise/areas-of-experti
     AreasOfExpertiseComponent
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [ConstantsService]
 })
 export class AppModule { }
 

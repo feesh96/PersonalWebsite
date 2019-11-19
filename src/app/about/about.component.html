@@ -11,9 +11,12 @@
             <div class="twelve columns">
                 <h3>My areas of expertise</h3>
             </div>
-        </div>
-        <div class="row">
-            <app-areas-of-expertise></app-areas-of-expertise>
+            <div *ngIf="state==0">
+                <app-areas-of-expertise ></app-areas-of-expertise>
+            </div>
+            <div *ngIf="state==1">
+                <app-production></app-production>
+            </div>
         </div>
     </section>
 </div>
