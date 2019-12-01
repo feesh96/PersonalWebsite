@@ -19,6 +19,8 @@ import { CarouselComponent, CarouselItemElement } from './custom-slider/carousel
 import { CarouselItemDirective } from './custom-slider/carousel/carousel-item.directive';
 import { ProductionComponent } from './production/production.component';
 import { AreasOfExpertiseComponent } from './areas-of-expertise/areas-of-expertise.component';
+import { MaterialModule } from './material.module';
+import { PlayerComponent } from './pages/player/player.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { AreasOfExpertiseComponent } from './areas-of-expertise/areas-of-experti
       { path: 'hobbies', component: HobbiesComponent, data: {animation: 'HobbiesPage'}},
       { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
       { path: 'production', component: ProductionComponent, data: {animation: 'ProductionPage'}},
-    ])
+    ]),
+    MaterialModule
   ],
   declarations: [
     AppComponent,
@@ -48,16 +51,10 @@ import { AreasOfExpertiseComponent } from './areas-of-expertise/areas-of-experti
     CarouselItemElement,
     CustomSliderComponent,
     ProductionComponent,
-    AreasOfExpertiseComponent
+    AreasOfExpertiseComponent,
+    PlayerComponent
   ],
   bootstrap: [AppComponent],
   providers: [ConstantsService]
 })
 export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -1,4 +1,15 @@
 <button (click)="hideMusic()">Back</button>
-<!-- <mat-advanced-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" 
+<div class="reset">
+<mat-advanced-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" 
             [displayPlaylist]="msaapDisplayPlayList" [pageSizeOptions]="msaapPageSizeOptions" 
-                [expanded]="true" [displayVolumeControls]="true"></mat-advanced-audio-player> -->
+                [expanded]="true" [displayVolumeControls]="true"></mat-advanced-audio-player>
+</div>
+
+<!-- Simplest Fix
+
+Put everything in an iframe. This has it's own set of limitations:
+
+Cross Domain limitations: Your content will not have access to the original document at all. You cannot overlay content, modify the DOM, etc.
+Display Limitations: Your content is locked inside of a rectangle.
+If your content can fit into a box, you can get around problem #1 by having your content write an iframe and explicitly set the content, 
+thus skirting around the issue, since the iframe and document will share the same domain. -->
