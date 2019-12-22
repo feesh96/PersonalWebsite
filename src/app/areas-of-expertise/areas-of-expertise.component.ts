@@ -17,6 +17,7 @@ export class AreasOfExpertiseComponent implements OnInit {
   }
 
   showMusic() {
+    console.log('AYO')
     this.stateService.toggleMusic(1)
   }
 

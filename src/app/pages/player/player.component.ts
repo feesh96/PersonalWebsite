@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Track } from 'ngx-audio-player';   
 import { ConstantsService } from '../../common/services/constants.service';
+import { AudioService } from "../../services/audio.service";
+import { CloudService } from "../../services/cloud.service";
+import { StreamState } from "../../interfaces/stream-state";
 
 @Component({
   selector: 'app-player',
@@ -9,44 +11,27 @@ import { ConstantsService } from '../../common/services/constants.service';
 })
 export class PlayerComponent {
   @Input() showMusic: string;
+  files: Array<any> = [];
   state;
-  files: Array<any> = [
-    { name: "First Song", artist: "Inder" },
-    { name: "Second Song", artist: "You" }
-  ];
+  newState: StreamState;
+
   currentFile: any = {};
 
-  // Material Style Advance Audio Player Playlist
-  msaapPlaylist: Track[] = [
-  {
-    title: 'Evanesce',
-    link: '../assets/Beats/Evanesce.mp3'
-  },
-  {
-    title: 'Moonwalking',
-    link: '../assets/Beats/Moonwalking.mp3'
-  },
-  {
-    title: 'Mr. Big Chef',
-    link: '../assets/Beats/Mr Big Chef.mp3'
-  },
-  {
-    title: 'My World',
-    link: '../assets/Beats/My World.mp3'
-  },
-  {
-    title: 'One and Only',
-    link: '../assets/Beats/One and Only.mp3'
-  },
-  {
-    title: 'The Good Life',
-    link: '../assets/Beats/The Good Life.mp3'
-  }
-  ];
+  constructor(private stateService: ConstantsService, public audioService: AudioService,
+    public cloudService: CloudService) { 
+      // get media files
+      cloudService.getFiles().subscribe(files => {
+        this.files = files;
+      });
+      this.audioService.getState().subscribe(state => {
+        this.newState = state;
+      });
+      // const firstFile = this.files[0];
+      // const index = 0;
+      // this.currentFile = { index , firstFile };
+     }
 
-  constructor(private stateService: ConstantsService) {  }
-
-  ngOnInit() {
+  ngOnInit() {  // For the areas-of-expertise section
     this.stateService.currentState.subscribe(state => this.state = state)
   }
 
@@ -55,9 +40,54 @@ export class PlayerComponent {
   }
 
   isFirstPlaying() {
-    return false;
+    return this.currentFile.index === 0;
   }
+
   isLastPlaying() {
-    return true;
+    return this.currentFile.index === this.files.length - 1;
+  }
+
+  onSliderChangeEnd(change) {
+    this.audioService.seekTo(change.value);
+  }
+
+  pause() {
+    this.audioService.pause();
+  }
+
+  play() {
+    this.audioService.play();
+    console.log("Current File: ")
+    console.log(this.currentFile);
+  }
+
+  stop() {
+    this.audioService.stop();
+  }
+
+  next() {
+    const index = this.currentFile.index + 1;
+    const file = this.files[index];
+
+    this.openFile(file, index);
+  }
+
+  previous() {
+    const index = this.currentFile.index - 1;
+    const file = this.files[index];
+    this.openFile(file, index);
+  }
+
+  openFile(file, index) {
+    console.log("Index: " + index);
+    this.currentFile = { index, file };
+    this.audioService.stop();
+    this.playStream(file.url);
+  }
+
+  playStream(url) {
+    this.audioService.playStream(url).subscribe(events => {
+      // listening for fun here
+    });
   }
 }
