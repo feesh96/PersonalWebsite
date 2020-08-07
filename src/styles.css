@@ -60,7 +60,6 @@ h1, h3, h4, header .btn {
 
 h1 {
   margin: 100px 0 20px;
-  text-transform: uppercase;
   font-size: 2.6rem;
 }
 
@@ -132,7 +131,7 @@ header .btn {
 }
 
 header .services {
-  margin-top: 100px;
+  margin-top: 40px;
   padding: 15px 20px 30px 20px;
   background: rgba(56, 56, 56, 0.507);
   border-radius: 10px;
@@ -454,6 +453,7 @@ nav a {
 
   h1 {
     font-size: 3.5rem;
+    font-family: "Raleway", sans-serif;
   }
 
   h3 {

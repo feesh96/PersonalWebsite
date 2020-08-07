@@ -21,7 +21,7 @@ import { ProductionComponent } from './production/production.component';
 import { AreasOfExpertiseComponent } from './areas-of-expertise/areas-of-expertise.component';
 import { MaterialModule } from './material.module';
 import { PlayerComponent } from './pages/player/player.component';
-
+import { MayIComponent } from './may-i/may-i.component';
 
 @NgModule({
   imports: [
@@ -32,10 +32,10 @@ import { PlayerComponent } from './pages/player/player.component';
     NgxAudioPlayerModule,
     RouterModule.forRoot([  //Put all the component routing within the home page here
       { path: '', component: AboutComponent, data: {animation: 'HomePage'} },
-      { path: 'career', component: CareerComponent, data: {animation: 'CareerPage'}},
-      { path: 'hobbies', component: HobbiesComponent, data: {animation: 'HobbiesPage'}},
+      { path: 'code', component: CareerComponent, data: {animation: 'CareerPage'}},
+      { path: 'sound', component: HobbiesComponent, data: {animation: 'HobbiesPage'}},
       { path: 'contact', component: ContactComponent, data: {animation: 'ContactPage'}},
-      { path: 'production', component: ProductionComponent, data: {animation: 'ProductionPage'}},
+      { path: 'mayI', component: MayIComponent}
     ]),
     MaterialModule
   ],
@@ -45,6 +45,7 @@ import { PlayerComponent } from './pages/player/player.component';
     AboutComponent,
     CareerComponent,
     HobbiesComponent,
+    MayIComponent,
     ContactComponent,
     CarouselComponent, 
     CarouselItemDirective, 

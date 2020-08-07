@@ -9,6 +9,10 @@ export class CloudService {
 
   files: any = [
     {
+      name: 'Be Alright (tagged)',
+      url: '../../assets/Beats/BeAlright.mp3'
+    },
+    {
       name: 'Evanesce',
       url: '../../assets/Beats/Evanesce.mp3'
     },
