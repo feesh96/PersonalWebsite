@@ -18,4 +18,4 @@ jobs:
         AWS_ACCESS_KEY_ID: AKIA2MTMZKZBBW2BFTZM
         AWS_SECRET_ACCESS_KEY: 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
         AWS_REGION: 'us-east-1'   # optional: defaults to us-east-1
-        SOURCE_DIR: '/dist/PersonalWebsite'      # optional: defaults to entire repository
+        SOURCE_DIR: 'dist/personalWebsite'      # optional: defaults to entire repository
