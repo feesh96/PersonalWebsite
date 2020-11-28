@@ -1,0 +1,19 @@
+.reset {
+    all: initial;
+    all: unset;
+    height:28px !important;
+    width:28px !important;
+    font-size:28px !important;
+}
+
+#xButton {
+    content: 'x';
+    color: #fff;
+    font-weight: 300;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 1%;
+    right: 12%;
+    width: 100px;
+    margin: auto;
+}

@@ -22,6 +22,7 @@ import { AreasOfExpertiseComponent } from './areas-of-expertise/areas-of-experti
 import { MaterialModule } from './material.module';
 import { PlayerComponent } from './pages/player/player.component';
 import { MayIComponent } from './may-i/may-i.component';
+import { SpotifyPlayerComponent } from './spotify-player/spotify-player.component';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { MayIComponent } from './may-i/may-i.component';
     CustomSliderComponent,
     ProductionComponent,
     AreasOfExpertiseComponent,
-    PlayerComponent
+    PlayerComponent,
+    SpotifyPlayerComponent
   ],
   bootstrap: [AppComponent],
   providers: [ConstantsService]

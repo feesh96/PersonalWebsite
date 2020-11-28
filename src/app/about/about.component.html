@@ -6,7 +6,7 @@
         </div>
     </div>
     <section class="services">
-        <div class="row">
+        <div style="position: relative" class="row">
             <div class="twelve columns">
                 <h3>My areas of expertise</h3>
             </div>
@@ -14,7 +14,8 @@
                 <app-areas-of-expertise ></app-areas-of-expertise>
             </div>
             <div *ngIf="state==1">
-                <app-player></app-player>
+                <app-spotify-player></app-spotify-player>
+                <!-- <app-player></app-player> -->
             </div>
         </div>
     </section>
