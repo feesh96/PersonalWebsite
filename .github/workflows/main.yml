@@ -1,10 +1,10 @@
 name: Upload Website
 
 on:
-   [workflow_dispatch]
-#   push:
-#     branches:
-#     - master
+   #[workflow_dispatch]       # Used for manual testing
+  push:
+    branches:
+    - master
 
 jobs:
   deploy:
