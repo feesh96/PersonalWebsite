@@ -10,6 +10,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest # spins up box for free on github
     steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.8
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.8
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build -- --prod
     - uses: actions/checkout@master
     - uses: jakejarvis/s3-sync-action@master
       with:
