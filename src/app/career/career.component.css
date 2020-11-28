@@ -4,7 +4,7 @@ li.jobs{
 }
 
 h4.jobs{
-    margin: 0px 0px -50px 0px;
+    margin: 0px 0px -40px 0px;
     margin-top: 5rem;
 }
 
@@ -15,6 +15,9 @@ p.jobs{
     margin-left: 1%;
 }
 
-h3.jobs {
-    
+sub.jobs {
+    margin-left:30px;
+    margin-bottom: 20px;
+    display:block;
+    line-height: 105%;
 }
