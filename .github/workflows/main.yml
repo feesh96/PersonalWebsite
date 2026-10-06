@@ -1,31 +1,36 @@
-name: Upload Website
+name: Deploy website
 
 on:
-   #[workflow_dispatch]       # Used for manual testing
   push:
-    branches:
-    - master
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest # spins up box for free on github
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-      
-# USE BELOW STEPS TO BUILD IN GITHUB
-#     - name: Use Node.js 12.8
-#       uses: actions/setup-node@v1
-#       with:
-#         node-version: 12.8
-#     - name: Install dependencies
-#       run: npm install
-#     - name: Build
-#       run: npm run build -- --prod
-
-    - uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
-    - run: aws s3 sync dist/personalWebsite s3://mattfishman.com --acl public-read --follow-symlinks --delete
-
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v6.3.0
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Upload website
+        run: aws s3 sync dist/personalWebsite s3://mattfishman.com --acl public-read --follow-symlinks
+      - name: Keep the homepage fresh
+        run: aws s3 cp dist/personalWebsite/index.html s3://mattfishman.com/index.html --acl public-read --content-type text/html --cache-control 'public, max-age=60'
+      - name: Refresh CloudFront cache
+        run: |
+          if aws cloudfront list-distributions --output json > /tmp/distributions.json; then
+            distribution_id=$(python3 -c 'import json; data=json.load(open("/tmp/distributions.json")); print(next((item["Id"] for item in data.get("DistributionList", {}).get("Items", []) if "mattfishman.com" in item.get("Aliases", {}).get("Items", [])), ""))')
+            if [ -n "$distribution_id" ]; then
+              aws cloudfront create-invalidation --distribution-id "$distribution_id" --paths '/*'
+            else
+              echo 'No CloudFront distribution matched mattfishman.com.'
+            fi
+          else
+            echo 'CloudFront distribution lookup was unavailable; the new site will appear after cache expiry.'
+          fi
