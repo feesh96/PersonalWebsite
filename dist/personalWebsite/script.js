@@ -132,8 +132,8 @@ const interestDialog = document.querySelector('#interest-dialog');
 const interestTitle = document.querySelector('#interest-dialog-title');
 const interestTabs = [...document.querySelectorAll('[data-category]')];
 const interestHeadings = {
-  music: 'My Favorite Albums',
-  podcasts: 'My Favorite Podcasts',
+  music: 'Who I Listen To',
+  podcasts: 'What I Listen To',
   movies: 'My Favorite Movies'
 };
 let interestOpener;
