@@ -38,6 +38,16 @@ const playerPanel = document.querySelector('.player-panel');
 const tracks = [...document.querySelectorAll('.track')];
 let selectedIndex = 0;
 
+const playback = new PlaybackCoordinator();
+playback.register('beats', () => audio.pause());
+playback.transition('beats', 'ready');
+playback.transition('beats', 'enable');
+audio.addEventListener('play', () => playback.transition('beats', 'started'));
+audio.addEventListener('pause', () => playback.transition('beats', 'update', { isPaused: true }));
+audio.addEventListener('ended', () => playback.transition('beats', 'update', { isPaused: true }));
+audio.addEventListener('error', () => playback.transition('beats', 'error'));
+
+
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00';
   return `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
@@ -122,14 +132,15 @@ const interestDialog = document.querySelector('#interest-dialog');
 const interestTitle = document.querySelector('#interest-dialog-title');
 const interestTabs = [...document.querySelectorAll('[data-category]')];
 const interestHeadings = {
-  music: 'Who I’m Listening To',
-  podcasts: 'What I’m Listening To',
-  movies: 'What I’m Watching'
+  music: 'My Favorite Albums',
+  podcasts: 'My Favorite Podcasts',
+  movies: 'My Favorite Movies'
 };
 let interestOpener;
 
 function selectInterest(category) {
   interestTitle.textContent = interestHeadings[category];
+  if (category === 'music' && interestDialog.open) initializeAlbumPlayers();
   interestTabs.forEach(tab => {
     const selected = tab.dataset.category === category;
     tab.setAttribute('aria-selected', String(selected));
@@ -137,11 +148,8 @@ function selectInterest(category) {
     const panel = document.getElementById(tab.getAttribute('aria-controls'));
     panel.hidden = !selected;
     panel.scrollTop = 0;
-    panel.querySelectorAll('.spotify-player').forEach(player => {
-      // Unload inactive players so hidden audio cannot keep playing.
-      if (selected) {
-        if (!player.hasAttribute('src')) player.src = player.dataset.src;
-      } else player.removeAttribute('src');
+    panel.querySelectorAll('.spotify-embed').forEach(host => {
+      playback.transition(host.dataset.playerId, selected ? 'enable' : 'disable');
     });
   });
 }
@@ -151,6 +159,7 @@ document.querySelectorAll('[data-interest]').forEach(button => {
     interestOpener = button;
     selectInterest(button.dataset.interest);
     interestDialog.showModal();
+    if (button.dataset.interest === 'music') initializeAlbumPlayers();
     document.body.classList.add('modal-open');
   });
 });
@@ -177,7 +186,61 @@ interestDialog.addEventListener('click', event => {
   if (event.target === interestDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) interestDialog.close();
 });
 interestDialog.addEventListener('close', () => {
-  interestDialog.querySelectorAll('.spotify-player').forEach(player => player.removeAttribute('src'));
+  document.querySelectorAll('.spotify-embed').forEach(host => playback.transition(host.dataset.playerId, 'disable'));
   document.body.classList.remove('modal-open');
   interestOpener?.focus({ preventScroll: true });
 });
+
+
+let spotifyAPI;
+let spotifyAPIPromise;
+const albumControllers = new Map();
+const albumHosts = [...document.querySelectorAll('.spotify-embed')];
+
+function loadSpotifyAPI() {
+  if (spotifyAPIPromise) return spotifyAPIPromise;
+  spotifyAPIPromise = new Promise((resolve, reject) => {
+    window.onSpotifyIframeApiReady = api => { spotifyAPI = api; resolve(api); };
+    const script = document.createElement('script');
+    script.src = 'https://open.spotify.com/embed/iframe-api/v1';
+    script.async = true;
+    script.onerror = () => reject(new Error('Spotify could not be reached'));
+    document.head.append(script);
+  });
+  return spotifyAPIPromise;
+}
+
+async function initializeAlbumPlayers() {
+  try {
+    const api = spotifyAPI || await loadSpotifyAPI();
+    albumHosts.forEach(host => {
+      const id = host.dataset.playerId;
+      if (albumControllers.has(id)) return;
+      // Reserve before initialization so repeated tab clicks cannot duplicate controllers.
+      albumControllers.set(id, null);
+      const placeholder = document.createElement('div');
+      host.replaceChildren(placeholder);
+      playback.register(id, () => albumControllers.get(id)?.pause(), state => {
+        host.dataset.playbackState = state;
+      });
+      const enabled = interestDialog.open && !host.closest('[role="tabpanel"]').hidden;
+      playback.transition(id, enabled ? 'enable' : 'disable');
+      api.createController(placeholder, { url: host.dataset.spotifyUrl, width: '100%', height: 352 }, controller => {
+        albumControllers.set(id, controller);
+        const iframe = host.querySelector('iframe');
+        if (iframe) iframe.title = `Spotify player: ${host.dataset.playerTitle}`;
+        controller.addListener('ready', () => playback.transition(id, 'ready'));
+        controller.addListener('playback_started', () => playback.transition(id, 'started'));
+        controller.addListener('playback_update', event => playback.transition(id, 'update', event.data));
+      });
+    });
+  } catch {
+    albumHosts.forEach(host => {
+      if (host.querySelector('iframe')) return;
+      host.dataset.playbackState = 'error';
+      host.replaceChildren(Object.assign(document.createElement('p'), {
+        className: 'spotify-loading', textContent: 'The Spotify player is unavailable. Use the Spotify link above to listen.'
+      }));
+    });
+  }
+}

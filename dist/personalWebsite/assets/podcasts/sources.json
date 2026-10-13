@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Lenny's Podcast: Product | Career | Growth",
+    "source": "https://open.spotify.com/show/2dR1MUZEHCOnz1LVfNac0j",
+    "artwork_source": "https://i.scdn.co/image/ab6765630000ba8af45f22d94c8aea326e8bf861",
+    "artwork_local": "assets/podcasts/lenny.jpg"
+  },
+  {
+    "title": "The Journal.",
+    "source": "https://open.spotify.com/show/0KxdEdeY2Wb3zr28dMlQva",
+    "artwork_source": "https://i.scdn.co/image/ab6765630000ba8afed98c4fdc504416141e9409",
+    "artwork_local": "assets/podcasts/journal.jpg"
+  },
+  {
+    "title": "Lex Fridman Podcast",
+    "source": "https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL",
+    "artwork_source": "https://i.scdn.co/image/ab6765630000ba8a563ebb538d297875b10114b7",
+    "artwork_local": "assets/podcasts/lex.jpg"
+  },
+  {
+    "title": "The AI Daily Brief: Artificial Intelligence News and Analysis",
+    "source": "https://open.spotify.com/show/7gKwwMLFLc6RmjmRpbMtEO",
+    "artwork_source": "https://i.scdn.co/image/ab6765630000ba8a797fe5aeae1fbb9493153617",
+    "artwork_local": "assets/podcasts/ai.jpg"
+  },
+  {
+    "title": "All-In with Chamath, Jason, Sacks & Friedberg",
+    "source": "https://open.spotify.com/show/2IqXAVFR4e0Bmyjsdc8QzF",
+    "artwork_source": "https://i.scdn.co/image/ab6765630000ba8af662927adc2c9d6505e05b51",
+    "artwork_local": "assets/podcasts/allin.jpg"
+  }
+]

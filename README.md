@@ -8,4 +8,8 @@ Pushes to `master` deploy `dist/personalWebsite` to the existing `mattfishman.co
 
 The studio portrait was supplied by Matt. About and selected-work copy highlights LinkedIn Creator Analytics, Creator Monetization, and Capital One Android account opening. Project visuals are decorative CSS illustrations. Music files and contact links came from the earlier site.
 
-The beat archive starts with Be Alright, My World, and One and Only. Beyond the screen opens Music, Podcasts, and Movies in a keyboard-accessible dialog. Music begins with J Dilla’s Donuts album. Music and podcast entries include Spotify embeds and direct links; inactive players unload when switching categories or closing the dialog. Movies include local posters, release years, director credits, and IMDb links. Poster sources are recorded in `dist/personalWebsite/assets/movies/sources.json`.
+The beat archive starts with Be Alright, My World, and One and Only. Beyond the screen opens My Favorite Albums, My Favorite Podcasts, and My Favorite Movies. Albums include Donuts, Love Deluxe, My Beautiful Dark Twisted Fantasy, and Spotify’s This Is KAYTRANADA / This Is Chris Lake best-of playlists. Podcasts show stable show overview cards with cover art, descriptions, and Spotify links. Movie cards include posters, years, directors, and IMDb links.
+
+Spotify’s iframe API and the native beat player share a playback state machine in `dist/personalWebsite/playback-state.js`. Starting one player pauses its predecessor. Switching categories or closing the dialog pauses Spotify while preserving playback position. The coordinator handles buffering, delayed events, and hidden-player starts. The deployment workflow runs nine playback tests before upload and versions both the coordinator and main frontend assets.
+
+Run tests with `PLAYBACK_MODULE=../dist/personalWebsite/playback-state.js node --test tests/playback-state.test.cjs`. The older Angular source remains unchanged.
