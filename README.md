@@ -4,7 +4,7 @@ The current site is a static homepage in `dist/personalWebsite`. It includes an 
 
 Preview locally with `python3 -m http.server 4173 -d dist/personalWebsite`, then open `http://127.0.0.1:4173/`. There is no build step. Fonts load from Google Fonts, with system font fallbacks.
 
-Pushes to `master` deploy `dist/personalWebsite` to the existing `mattfishman.com` S3 bucket. The workflow updates the homepage cache metadata and attempts a CloudFront invalidation when the AWS credentials allow distribution lookup. It does not delete unrelated S3 objects.
+Pushes to `master` deploy `dist/personalWebsite` to the existing `mattfishman.com` S3 bucket. The workflow versions CSS and JavaScript URLs by content hash, updates the homepage cache metadata, and attempts a CloudFront invalidation when the AWS credentials allow distribution lookup. Versioned URLs let returning visitors receive changed scripts and styles without relying on invalidation permissions. It does not delete unrelated S3 objects.
 
 The studio portrait was supplied by Matt. About and selected-work copy highlights LinkedIn Creator Analytics, Creator Monetization, and Capital One Android account opening. Project visuals are decorative CSS illustrations. Music files and contact links came from the earlier site.
 
