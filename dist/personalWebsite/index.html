@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#101923" />
-    <meta name="description" content="Matt Fishman's corner of the web: software, music, and the things that make him curious." />
+    <meta name="description" content="Matt Fishman's personal website: software engineering at LinkedIn, music, and the things he cares about." />
     <title>Matt Fishman | Code, sound & curiosity</title>
     <link rel="icon" href="assets/FishSkinny.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,9 +36,9 @@
       <section class="hero section" id="home" aria-labelledby="hero-title">
         <div class="section-inner hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="eyebrow-line"></span> A personal corner of the internet</p>
+            <p class="eyebrow"><span class="eyebrow-line"></span> My personal website</p>
             <h1 id="hero-title">Hi, I’m <span>Matt Fishman.</span></h1>
-            <p class="hero-lede">I build software, make music, and follow whatever sparks my curiosity.</p>
+            <p class="hero-lede">I build software, make music, and never quit on the things I care about</p>
             <p class="hero-body">This is a place for the projects I’ve worked on, the sounds I’ve made, and a little more of who I am beyond a job title.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#about">Get to know me <span aria-hidden="true">↘</span></a>
@@ -47,7 +47,7 @@
           </div>
           <figure class="portrait-wrap">
             <div class="portrait-frame">
-              <img src="https://avatars.githubusercontent.com/u/16885180?v=4" width="460" height="460" alt="Matt Fishman smiling outdoors at sunset" fetchpriority="high" />
+              <img src="assets/portrait-studio.jpg" width="6000" height="4000" alt="Matt Fishman smiling in a studio portrait" fetchpriority="high" />
             </div>
             <figcaption>Good to meet you.</figcaption>
             <div class="portrait-accent portrait-accent-one" aria-hidden="true"></div>
@@ -68,12 +68,13 @@
             <h2 id="about-title">A little <em>about me.</em></h2>
           </div>
           <div class="about-content">
-            <p class="statement">I’m a software engineer who cares about how things work <span>and</span> how they feel.</p>
-            <p>I’ve spent time building systems in finance, exploring research projects in college, and making beats just because I love the process. I’m happiest when I get to learn something new and make something useful out of it.</p>
+            <p class="statement">I build products that help people <span>understand, create, and take their next step.</span></p>
+            <p>I’m a senior software engineer and tech lead at LinkedIn, based in New York. I’ve led work on Creator Analytics and helped build Creator Monetization from the ground up, connecting the mobile and web experiences with the APIs and data behind them.</p>
+            <p>Before LinkedIn, I built native Android account-opening flows at Capital One. I studied computer science and music technology at Virginia Tech, and I still make time to make beats. I care about the details, seeing things through, and making something useful for the people on the other side of the screen.</p>
             <div class="about-notes" aria-label="A few things about me">
-              <div><span class="note-symbol" aria-hidden="true">⌘</span><span>Software & thoughtful systems</span></div>
+              <div><span class="note-symbol" aria-hidden="true">⌘</span><span>Products, platforms & thoughtful systems</span></div>
               <div><span class="note-symbol" aria-hidden="true">♫</span><span>Making & finding music</span></div>
-              <div><span class="note-symbol" aria-hidden="true">✳</span><span>Always following curiosity</span></div>
+              <div><span class="note-symbol" aria-hidden="true">✳</span><span>Seeing the things I care about through</span></div>
             </div>
           </div>
         </div>
@@ -102,25 +103,25 @@
               <div class="player-topline"><span>THE BEAT ARCHIVE</span><span>7 TRACKS</span></div>
               <div class="now-playing">
                 <p>Now playing</p>
-                <h3 id="track-title">Moonwalking</h3>
+                <h3 id="track-title">Be Alright</h3>
                 <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
               </div>
               <div class="player-controls">
-                <button class="play-button" id="play-toggle" type="button" aria-label="Play Moonwalking"><span id="play-symbol" aria-hidden="true">▶</span></button>
+                <button class="play-button" id="play-toggle" type="button" aria-label="Play Be Alright"><span id="play-symbol" aria-hidden="true">▶</span></button>
                 <div class="seek-wrap">
                   <label class="sr-only" for="seek">Seek within track</label>
                   <input id="seek" type="range" min="0" max="100" value="0" step="0.1" />
                   <div class="time-row"><span id="elapsed">0:00</span><span id="duration">0:00</span></div>
                 </div>
               </div>
-              <audio id="audio" preload="none" src="assets/Beats/Moonwalking.mp3"></audio>
+              <audio id="audio" preload="none" src="assets/Beats/BeAlright.mp3"></audio>
               <div class="track-list" role="group" aria-label="Choose a beat">
-                <button class="track is-selected" type="button" data-src="assets/Beats/Moonwalking.mp3" data-title="Moonwalking" aria-current="true"><span>01</span><strong>Moonwalking</strong><span class="track-end" aria-hidden="true">↗</span></button>
-                <button class="track" type="button" data-src="assets/Beats/BeAlright.mp3" data-title="Be Alright"><span>02</span><strong>Be Alright</strong><span class="track-end" aria-hidden="true">↗</span></button>
-                <button class="track" type="button" data-src="assets/Beats/Evanesce.mp3" data-title="Evanesce"><span>03</span><strong>Evanesce</strong><span class="track-end" aria-hidden="true">↗</span></button>
-                <button class="track" type="button" data-src="assets/Beats/Mr Big Chef.mp3" data-title="Mr Big Chef"><span>04</span><strong>Mr Big Chef</strong><span class="track-end" aria-hidden="true">↗</span></button>
-                <button class="track" type="button" data-src="assets/Beats/My World.mp3" data-title="My World"><span>05</span><strong>My World</strong><span class="track-end" aria-hidden="true">↗</span></button>
-                <button class="track" type="button" data-src="assets/Beats/One and Only.mp3" data-title="One and Only"><span>06</span><strong>One and Only</strong><span class="track-end" aria-hidden="true">↗</span></button>
+                <button class="track is-selected" type="button" data-src="assets/Beats/BeAlright.mp3" data-title="Be Alright" aria-current="true"><span>01</span><strong>Be Alright</strong><span class="track-end" aria-hidden="true">↗</span></button>
+                <button class="track" type="button" data-src="assets/Beats/My World.mp3" data-title="My World"><span>02</span><strong>My World</strong><span class="track-end" aria-hidden="true">↗</span></button>
+                <button class="track" type="button" data-src="assets/Beats/One and Only.mp3" data-title="One and Only"><span>03</span><strong>One and Only</strong><span class="track-end" aria-hidden="true">↗</span></button>
+                <button class="track" type="button" data-src="assets/Beats/Moonwalking.mp3" data-title="Moonwalking"><span>04</span><strong>Moonwalking</strong><span class="track-end" aria-hidden="true">↗</span></button>
+                <button class="track" type="button" data-src="assets/Beats/Evanesce.mp3" data-title="Evanesce"><span>05</span><strong>Evanesce</strong><span class="track-end" aria-hidden="true">↗</span></button>
+                <button class="track" type="button" data-src="assets/Beats/Mr Big Chef.mp3" data-title="Mr Big Chef"><span>06</span><strong>Mr Big Chef</strong><span class="track-end" aria-hidden="true">↗</span></button>
                 <button class="track" type="button" data-src="assets/Beats/The Good Life.mp3" data-title="The Good Life"><span>07</span><strong>The Good Life</strong><span class="track-end" aria-hidden="true">↗</span></button>
               </div>
               <p class="player-status sr-only" id="player-status" role="status"></p>
@@ -136,20 +137,20 @@
               <p class="eyebrow">03 / What I’ve built</p>
               <h2 id="work-title">Selected <em>work.</em></h2>
             </div>
-            <p>A few chapters from the professional and experimental sides of my work.</p>
+            <p>A few products I’ve helped bring to life, from creator tools to mobile banking.</p>
           </div>
           <div class="project-grid">
             <article class="project-card">
-              <div class="project-visual project-visual-capital" aria-hidden="true"><span class="visual-label">CAPITAL MARKETS TECH</span><div class="market-lines"><i></i><i></i><i></i><i></i><i></i></div><span class="visual-corner">C1</span></div>
-              <div class="project-body"><p class="project-type">Professional work · Capital One</p><h3>Building for capital markets</h3><p>Applications and data systems supporting trading and reporting, built with Java, Spring, AWS, and Docker.</p><span class="project-meta">Software engineering</span></div>
+              <div class="project-visual project-visual-analytics" aria-hidden="true"><span class="visual-label">CREATOR ANALYTICS</span><div class="analytics-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="visual-corner">LINKEDIN</span></div>
+              <div class="project-body"><p class="project-type">Product & platform · LinkedIn</p><h3>Helping creators see their impact</h3><p>I led full-stack analytics features and a shared framework for mobile and web. The architecture improved average page load time by 40% and helped teams build on a common foundation.</p><span class="project-meta">Server-driven UI · APIs · Data visualization</span><a class="project-link" href="https://www.linkedin.com/dashboard/" target="_blank" rel="noopener noreferrer">Explore Creator Analytics <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab; LinkedIn sign-in may be required)</span></a></div>
             </article>
             <article class="project-card">
-              <div class="project-visual project-visual-politics" aria-hidden="true"><span class="visual-label">POLITIGAUGE</span><div class="gauge"><span></span></div><span class="visual-corner">2019</span></div>
-              <div class="project-body"><p class="project-type">Undergraduate research · Virginia Tech</p><h3>PolitiGauge</h3><p>A Chrome extension that predicted the political leaning of the article you were reading.</p><span class="project-meta">Machine learning · Browser extension</span></div>
+              <div class="project-visual project-visual-creators" aria-hidden="true"><span class="visual-label">CREATOR MONETIZATION</span><div class="creator-orbits"><i></i><i></i><span>↗</span></div><span class="visual-corner">LINKEDIN</span></div>
+              <div class="project-body"><p class="project-type">From 0 to 1 · LinkedIn</p><h3>Opening doors for creators</h3><p>I helped build Creator Monetization from the ground up, owning the creator-facing dashboard and leading brand-facing profile integration across mobile, web, APIs, and data.</p><span class="project-meta">Creator tools · Full-stack engineering</span><a class="project-link" href="https://www.linkedin.com/creator/monetization/" target="_blank" rel="noopener noreferrer">Explore Creator Monetization <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab; LinkedIn sign-in may be required)</span></a></div>
             </article>
             <article class="project-card">
-              <div class="project-visual project-visual-music" aria-hidden="true"><span class="visual-label">ASK TOSCANINI</span><div class="music-staff">♪<span>♫</span>♪</div><span class="visual-corner">2018</span></div>
-              <div class="project-body"><p class="project-type">Undergraduate research · Virginia Tech</p><h3>Ask Toscanini</h3><p>An exploration of how software can understand and work with written music scores.</p><span class="project-meta">Music technology · JavaScript</span></div>
+              <div class="project-visual project-visual-capital" aria-hidden="true"><span class="visual-label">RETAIL BANKING</span><div class="bank-phone"><span>Let’s get started.</span><i></i><i></i><b>Continue →</b></div><span class="visual-corner">CAPITAL ONE</span></div>
+              <div class="project-body"><p class="project-type">Mobile banking · Capital One</p><h3>A new account, from your phone</h3><p>I built end-to-end native Android account-opening flows for Capital One’s retail bank, bringing digital onboarding into the mobile banking app.</p><span class="project-meta">Kotlin · Android · API-driven content</span></div>
             </article>
           </div>
           <a class="inline-link" href="https://github.com/feesh96">Explore my GitHub <span aria-hidden="true">↗</span></a>
@@ -161,13 +162,13 @@
           <div class="interests-copy">
             <p class="eyebrow">04 / Beyond the screen</p>
             <h2 id="interests-title">The things that <em>keep me curious.</em></h2>
-            <p>There’s a lot more to me than the work I do. Music, podcasts, games, and the occasional deep dive all have a place here.</p>
+            <p>There’s a lot more to me than the work I do. Music, podcasts, movies, and the occasional deep dive all have a place here. Tap a category to see a few favorites.</p>
             <a class="inline-link" href="https://open.spotify.com/user/feesh96?">Find me on Spotify <span aria-hidden="true">↗</span></a>
           </div>
           <div class="interest-stack" aria-label="Interests">
-            <div class="interest-row"><span class="interest-icon" aria-hidden="true">♫</span><div><h3>Music</h3><p>Making beats, playing, and finding something new to listen to.</p></div><span aria-hidden="true">01</span></div>
-            <div class="interest-row"><span class="interest-icon" aria-hidden="true">◉</span><div><h3>Podcasts</h3><p>Interesting voices and ideas for long walks or the commute.</p></div><span aria-hidden="true">02</span></div>
-            <div class="interest-row"><span class="interest-icon" aria-hidden="true">✳</span><div><h3>Games</h3><p>Worlds worth exploring and stories that stay with you.</p></div><span aria-hidden="true">03</span></div>
+            <button class="interest-row" type="button" data-interest="music" aria-haspopup="dialog" aria-controls="interest-dialog"><span class="interest-icon" aria-hidden="true">♫</span><span><strong>Music</strong><span class="interest-description">Making beats and finding something new to listen to.</span></span><span class="interest-arrow" aria-hidden="true">↗</span></button>
+            <button class="interest-row" type="button" data-interest="podcasts" aria-haspopup="dialog" aria-controls="interest-dialog"><span class="interest-icon" aria-hidden="true">◉</span><span><strong>Podcasts</strong><span class="interest-description">Interesting voices and ideas for long walks or the commute.</span></span><span class="interest-arrow" aria-hidden="true">↗</span></button>
+            <button class="interest-row" type="button" data-interest="movies" aria-haspopup="dialog" aria-controls="interest-dialog"><span class="interest-icon" aria-hidden="true">▣</span><span><strong>Movies</strong><span class="interest-description">Worlds worth exploring and stories that stay with you.</span></span><span class="interest-arrow" aria-hidden="true">↗</span></button>
           </div>
         </div>
       </section>
@@ -179,6 +180,43 @@
         </div>
       </section>
     </main>
+
+    <dialog class="interest-dialog" id="interest-dialog" aria-labelledby="interest-dialog-title">
+      <div class="interest-dialog-top"><p class="eyebrow">Beyond the screen</p><button class="dialog-close" type="button" aria-label="Close interests" autofocus>✕</button></div>
+      <div class="interest-tabs" role="tablist" aria-label="Explore my interests">
+        <button id="tab-music" type="button" role="tab" aria-selected="true" aria-controls="panel-music" data-category="music">Music</button>
+        <button id="tab-podcasts" type="button" role="tab" aria-selected="false" aria-controls="panel-podcasts" data-category="podcasts" tabindex="-1">Podcasts</button>
+        <button id="tab-movies" type="button" role="tab" aria-selected="false" aria-controls="panel-movies" data-category="movies" tabindex="-1">Movies</button>
+      </div>
+      <h2 id="interest-dialog-title">Who I’m Listening To</h2>
+      <div class="interest-panel" id="panel-music" role="tabpanel" aria-labelledby="tab-music" tabindex="0">
+        <ol class="favorites-list media-list">
+          <li><div class="favorite-heading"><span class="favorite-number">01</span><div><h3>J Dilla</h3><p>Donuts · Album</p></div><a class="media-link" href="https://open.spotify.com/album/7xJ7jHNu3JNfdnao9xwMho" target="_blank" rel="noopener noreferrer" aria-label="Open Donuts album by J Dilla on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player spotify-player-album" data-src="https://open.spotify.com/embed/album/7xJ7jHNu3JNfdnao9xwMho?theme=0" width="100%" height="352" title="Spotify player: Donuts by J Dilla" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">02</span><div><h3>Sade</h3><p>Kiss of Life</p></div><a class="media-link" href="https://open.spotify.com/track/65krtHkaYLPr0mEbjL61UP" target="_blank" rel="noopener noreferrer" aria-label="Open Kiss of Life by Sade on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/track/65krtHkaYLPr0mEbjL61UP?theme=0" width="100%" height="152" title="Spotify player: Kiss of Life by Sade" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">03</span><div><h3>Kanye West</h3><p>Devil in a New Dress</p></div><a class="media-link" href="https://open.spotify.com/track/1UGD3lW3tDmgZfAVDh6w7r" target="_blank" rel="noopener noreferrer" aria-label="Open Devil in a New Dress by Kanye West on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/track/1UGD3lW3tDmgZfAVDh6w7r?theme=0" width="100%" height="152" title="Spotify player: Devil in a New Dress by Kanye West" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">04</span><div><h3>KAYTRANADA</h3><p>Be Your Girl (Kaytranada Edition)</p></div><a class="media-link" href="https://open.spotify.com/track/38spM0LahLUfQhOMAqA7AI" target="_blank" rel="noopener noreferrer" aria-label="Open Be Your Girl (Kaytranada Edition) by KAYTRANADA on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/track/38spM0LahLUfQhOMAqA7AI?theme=0" width="100%" height="152" title="Spotify player: Be Your Girl (Kaytranada Edition) by KAYTRANADA" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">05</span><div><h3>Chris Lake</h3><p>Turn Off the Lights</p></div><a class="media-link" href="https://open.spotify.com/track/7dsImih2L25fa6qjNphBI7" target="_blank" rel="noopener noreferrer" aria-label="Open Turn Off the Lights by Chris Lake on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/track/7dsImih2L25fa6qjNphBI7?theme=0" width="100%" height="152" title="Spotify player: Turn Off the Lights by Chris Lake" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+        </ol>
+      </div>
+      <div class="interest-panel" id="panel-podcasts" role="tabpanel" aria-labelledby="tab-podcasts" tabindex="0" hidden>
+        <ol class="favorites-list media-list">
+          <li><div class="favorite-heading"><span class="favorite-number">01</span><h3>Lenny’s Podcast</h3><a class="media-link" href="https://open.spotify.com/show/2dR1MUZEHCOnz1LVfNac0j" target="_blank" rel="noopener noreferrer" aria-label="Open Lenny’s Podcast on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/show/2dR1MUZEHCOnz1LVfNac0j?theme=0" width="100%" height="152" title="Spotify player: Lenny’s Podcast" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">02</span><h3>The Journal</h3><a class="media-link" href="https://open.spotify.com/show/0KxdEdeY2Wb3zr28dMlQva" target="_blank" rel="noopener noreferrer" aria-label="Open The Journal on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/show/0KxdEdeY2Wb3zr28dMlQva?theme=0" width="100%" height="152" title="Spotify player: The Journal" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">03</span><h3>Lex Fridman Podcast</h3><a class="media-link" href="https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL" target="_blank" rel="noopener noreferrer" aria-label="Open Lex Fridman Podcast on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/show/2MAi0BvDc6GTFvKFPXnkCL?theme=0" width="100%" height="152" title="Spotify player: Lex Fridman Podcast" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">04</span><h3>The AI Daily Brief</h3><a class="media-link" href="https://open.spotify.com/show/7gKwwMLFLc6RmjmRpbMtEO" target="_blank" rel="noopener noreferrer" aria-label="Open The AI Daily Brief on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/show/7gKwwMLFLc6RmjmRpbMtEO?theme=0" width="100%" height="152" title="Spotify player: The AI Daily Brief" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+          <li><div class="favorite-heading"><span class="favorite-number">05</span><h3>All-In</h3><a class="media-link" href="https://open.spotify.com/show/2IqXAVFR4e0Bmyjsdc8QzF" target="_blank" rel="noopener noreferrer" aria-label="Open All-In on Spotify (opens in a new tab)">Spotify <span aria-hidden="true">↗</span></a></div><iframe class="spotify-player" data-src="https://open.spotify.com/embed/show/2IqXAVFR4e0Bmyjsdc8QzF?theme=0" width="100%" height="152" title="Spotify player: All-In" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></li>
+        </ol>
+      </div>
+      <div class="interest-panel" id="panel-movies" role="tabpanel" aria-labelledby="tab-movies" tabindex="0" hidden>
+        <ol class="favorites-list movie-list">
+          <li><span class="favorite-number">01</span><a class="movie-poster-link" href="https://www.imdb.com/title/tt7984734/" target="_blank" rel="noopener noreferrer" aria-label="View The Lighthouse on IMDb (opens in a new tab)"><img class="movie-poster" src="assets/movies/lighthouse.jpg" width="76" height="114" alt="The Lighthouse theatrical poster" loading="lazy" /></a><div class="movie-details"><h3>The Lighthouse</h3><p class="movie-year">2019</p><p>Directed by Robert Eggers</p><a class="media-link" href="https://www.imdb.com/title/tt7984734/" target="_blank" rel="noopener noreferrer">View on IMDb <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></li>
+          <li><span class="favorite-number">02</span><a class="movie-poster-link" href="https://www.imdb.com/title/tt8772262/" target="_blank" rel="noopener noreferrer" aria-label="View Midsommar on IMDb (opens in a new tab)"><img class="movie-poster" src="assets/movies/midsommar.png" width="76" height="114" alt="Midsommar theatrical poster" loading="lazy" /></a><div class="movie-details"><h3>Midsommar</h3><p class="movie-year">2019</p><p>Directed by Ari Aster</p><a class="media-link" href="https://www.imdb.com/title/tt8772262/" target="_blank" rel="noopener noreferrer">View on IMDb <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></li>
+          <li><span class="favorite-number">03</span><a class="movie-poster-link" href="https://www.imdb.com/title/tt2096673/" target="_blank" rel="noopener noreferrer" aria-label="View Inside Out on IMDb (opens in a new tab)"><img class="movie-poster" src="assets/movies/inside-out.jpg" width="76" height="114" alt="Inside Out theatrical poster" loading="lazy" /></a><div class="movie-details"><h3>Inside Out</h3><p class="movie-year">2015</p><p>Directed by Pete Docter; co-directed by Ronnie del Carmen</p><a class="media-link" href="https://www.imdb.com/title/tt2096673/" target="_blank" rel="noopener noreferrer">View on IMDb <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></li>
+          <li><span class="favorite-number">04</span><a class="movie-poster-link" href="https://www.imdb.com/title/tt0480249/" target="_blank" rel="noopener noreferrer" aria-label="View I Am Legend on IMDb (opens in a new tab)"><img class="movie-poster" src="assets/movies/i-am-legend.jpg" width="76" height="114" alt="I Am Legend theatrical poster" loading="lazy" /></a><div class="movie-details"><h3>I Am Legend</h3><p class="movie-year">2007</p><p>Directed by Francis Lawrence</p><a class="media-link" href="https://www.imdb.com/title/tt0480249/" target="_blank" rel="noopener noreferrer">View on IMDb <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></li>
+          <li><span class="favorite-number">05</span><a class="movie-poster-link" href="https://www.imdb.com/title/tt0121766/" target="_blank" rel="noopener noreferrer" aria-label="View Star Wars: Revenge of the Sith on IMDb (opens in a new tab)"><img class="movie-poster" src="assets/movies/revenge-of-the-sith.jpg" width="76" height="114" alt="Star Wars: Revenge of the Sith theatrical poster" loading="lazy" /></a><div class="movie-details"><h3>Star Wars: Revenge of the Sith</h3><p class="movie-year">2005</p><p>Directed by George Lucas</p><a class="media-link" href="https://www.imdb.com/title/tt0121766/" target="_blank" rel="noopener noreferrer">View on IMDb <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></li>
+        </ol>
+      </div>
+    </dialog>
 
     <footer class="site-footer"><div class="section-inner"><span>© <span id="year">2026</span> Matt Fishman</span><a href="#home">Back to top ↑</a><span>Made with curiosity.</span></div></footer>
   </body>

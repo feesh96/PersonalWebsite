@@ -6,4 +6,6 @@ Preview locally with `python3 -m http.server 4173 -d dist/personalWebsite`, then
 
 Pushes to `master` deploy `dist/personalWebsite` to the existing `mattfishman.com` S3 bucket. The workflow updates the homepage cache metadata and attempts a CloudFront invalidation when the AWS credentials allow distribution lookup. It does not delete unrelated S3 objects.
 
-The portrait came from Matt's public GitHub profile. Project visuals are CSS illustrations until project screenshots and links are selected. Music files and contact links came from the earlier site.
+The studio portrait was supplied by Matt. About and selected-work copy highlights LinkedIn Creator Analytics, Creator Monetization, and Capital One Android account opening. Project visuals are decorative CSS illustrations. Music files and contact links came from the earlier site.
+
+The beat archive starts with Be Alright, My World, and One and Only. Beyond the screen opens Music, Podcasts, and Movies in a keyboard-accessible dialog. Music begins with J Dilla’s Donuts album. Music and podcast entries include Spotify embeds and direct links; inactive players unload when switching categories or closing the dialog. Movies include local posters, release years, director credits, and IMDb links. Poster sources are recorded in `dist/personalWebsite/assets/movies/sources.json`.

@@ -1,0 +1,37 @@
+{
+  "lighthouse": {
+    "imdb": "https://www.imdb.com/title/tt7984734/",
+    "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/2/2c/The_Lighthouse.jpeg/250px-The_Lighthouse.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "wiki": "https://en.wikipedia.org/wiki/The_Lighthouse_%282019_film%29",
+    "poster_source": "https://thumb.wikimedia.org/wikipedia/en/thumb/2/2c/The_Lighthouse.jpeg/250px-The_Lighthouse.jpeg",
+    "poster_local": "assets/movies/lighthouse.jpg"
+  },
+  "midsommar": {
+    "imdb": "https://www.imdb.com/title/tt8772262/",
+    "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/47/Midsommar_%282019_film_poster%29.png/250px-Midsommar_%282019_film_poster%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "wiki": "https://en.wikipedia.org/wiki/Midsommar",
+    "poster_source": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/47/Midsommar_%282019_film_poster%29.png/250px-Midsommar_%282019_film_poster%29.png",
+    "poster_local": "assets/movies/midsommar.png"
+  },
+  "inside-out": {
+    "imdb": "https://www.imdb.com/title/tt2096673/",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "wiki": "https://en.wikipedia.org/wiki/Inside_Out_%282015_film%29",
+    "poster_source": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg",
+    "poster_local": "assets/movies/inside-out.jpg"
+  },
+  "i-am-legend": {
+    "imdb": "https://www.imdb.com/title/tt0480249/",
+    "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/df/I_am_legend_teaser.jpg/250px-I_am_legend_teaser.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "wiki": "https://en.wikipedia.org/wiki/I_Am_Legend_%28film%29",
+    "poster_source": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/df/I_am_legend_teaser.jpg/250px-I_am_legend_teaser.jpg",
+    "poster_local": "assets/movies/i-am-legend.jpg"
+  },
+  "revenge-of-the-sith": {
+    "imdb": "https://www.imdb.com/title/tt0121766/",
+    "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/250px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "wiki": "https://en.wikipedia.org/wiki/Star_Wars%3A_Episode_III_%E2%80%93_Revenge_of_the_Sith",
+    "poster_source": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg/250px-Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg",
+    "poster_local": "assets/movies/revenge-of-the-sith.jpg"
+  }
+}
